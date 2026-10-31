@@ -66,5 +66,25 @@ body {
 nav {
     width: 100vw;
     height: 5vh;
-    background-color: rgba(137, 43, 226, 0.392);
+    background-color: purple;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto;
+}
+
+nav > button {
+    border-radius: 0px;
+    border-right-color: white;
+    border-left-color: white;
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    border-width: 0.1vw;
+    background-color: #ffffff77;
+    height: 5vh;
+}
+
+button:hover {
+    background-color: #ffffffbb;
+    cursor: pointer;
 }
