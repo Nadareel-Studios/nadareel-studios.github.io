@@ -1,0 +1,70 @@
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.center-x {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-y {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.fixedcenter-x {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fixedcenter-y {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fixed {
+    position: fixed;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.landing-logo {
+    width: 100vh;
+    height: 100vh;
+    animation-name: fade-out;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+body {
+    color: white;
+}
+
+nav {
+    width: 100vw;
+    height: 5vh;
+    background-color: blueviolet;
+}
