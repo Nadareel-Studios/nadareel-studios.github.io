@@ -51,8 +51,8 @@
 }
 
 .landing-logo {
-    width: 100vh;
-    height: 100vh;
+    width: 100vmin;
+    height: 100vmin;
     animation-name: fade-out;
     animation-duration: 1s;
     animation-delay: 3s;
@@ -66,5 +66,5 @@ body {
 nav {
     width: 100vw;
     height: 5vh;
-    background-color: blueviolet;
+    background-color: rgba(137, 43, 226, 0.392);
 }
