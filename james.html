@@ -16,7 +16,22 @@
             </div>
             <meta http-equiv="refresh" content="0; url=http://nadareel.richarddorman.com/404" />
         </noscript>
+        <div id="console" style="background-color: rgb(50, 50, 50); border-color: black; border-radius: 20px; border-width: 0.5vmax; border-style: solid; width:40vw; height: 14vw; color:white; font-size: small; display: none;" class="fixed">
+            Loading console...<br>
+            Loaded.<br>
+            <strong style="color: chartreuse;">james@nadareel:~$</strong> whoami<br>
+            <em>james<br>Admin: yes<br>This account was created by the system.</em><br>
+            <strong style="color: chartreuse;">james@nadareel:~$</strong> sudo rm -rf --userfolder admin<br>
+            <em>[Sudo] Enter password to continue:</em><br>
+            <em>Deleted <strong style="color:crimson;">53</strong> files and folders.</em><br>
+            <strong style="color: chartreuse;">james@nadareel:~$</strong> sudo nadareel claimownership -y --force<br>
+            <em>[Sudo] Enter password to continue:</em><br>
+            <em>This user account, <strong>james@nadareel</strong> is now the owner of <strong>nadareel-studios/website</strong>.<br>
+            This change can be reverted by an admin at any time.</em><br>
+            <strong style="color: chartreuse;">james@nadareel:~$</strong>
+        </div>
         <button onclick="window.location.href = '/'" style="display: none; margin-top: 20vh; width:5vw; height: 3vw;" id="home-button" class="fixedcenter-x fixed">Home</button>
+        <button onclick="loadConsole();" style="display: none; width:5vw; height: 3vw;" id="console-button">loadConsole();</button>
         <div style="background-image: url('/assets/img/james-wave.webp'); background-size:cover; background-repeat: no-repeat; width:40vmin; height: 40vmin;" class="fixed fixedcenter-x fixedcenter-y" onclick="ontap()" id="james"></div>
         <div style="background-image: url('/assets/img/james-textbox.gif'); background-size:cover; background-repeat: no-repeat; width: 33vw; height: 11vw; display:flex; align-items: center; justify-items: center; margin-top: 70vh;" class="fixed fixedcenter-x">
             <p style="color:black; text-align: center; width: inherit; font-size: larger;" id="jamesbox"></p>
@@ -26,49 +41,56 @@
             const jamesaction = document.getElementById('james');
             let progress = 0;
             let textfinished = true;
-            function ontap() {
+            async function ontap() {
                 switch (progress)
                 {
                     case 0:
                         if (textfinished) {
-                        typeText("Heya!", "wave.webp", 100);
+                        typeText("Heya!", "wave.webp", 100, "talk.wav");
                         progress++;
                         }
                         break;
                     case 1:
                         if (textfinished) {
-                        typeText("I'm James, and I'm the antivirus for this here website!", "idle.webp", 100);
+                        typeText("I'm James, and I'm the antivirus for this here website!", "idle.webp", 100, "talk.wav");
                         progress++;}
                         break;
                     case 2:
                         if (textfinished) {
-                        typeText("Now, you must be wondering why I'm bringing this up.", "watch.webp", 100);
+                        typeText("Now, you must be wondering why I'm bringing this up.", "watch.webp", 100, "talk.wav");
                         progress++;}
                         break;
                     case 3:
                         if (textfinished) {
-                        typeText("Well... I'm bringing this up because you're trying to access\nmy part of the website.", "watch.webp", 100);
+                        typeText("Well... I'm bringing this up because you're trying to access\nmy part of the website.", "watch.webp", 100, "talk.wav");
                         progress++;}
                         break;
                     case 4:
                         if (textfinished) {
-                        typeText("Letting you access this page would... well...\nallow you to take total control over the website...", "call.webp", 100);
+                        typeText("Letting you access this page would... well...\nallow you to take total control over the website...", "call.webp", 100, "talk.wav");
                         progress++;}
                         break;
                     case 5:
                         if (textfinished) {
-                        typeText("Now, now. I know that you probably didn't mean\nto visit this page.", "idle.webp", 100);
+                        typeText("Now, now. I know that you probably didn't mean\nto visit this page.", "idle.webp", 100, "talk.wav");
                         progress++;}
                         break;
                     case 6:
                         if (textfinished) {
-                        typeText("So how about I just send you back to the home page,\nand we don't talk about this again?", "up.webp", 100);
+                        typeText("So how about I just send you back to the home page,\nand we don't talk about this again?", "up.webp", 100, "talk.wav");
                         document.getElementById('home-button').style.display = 'block';
+                        document.getElementById('console-button').style.display = 'block';
                         progress++;}
                         break;
                     case 7:
                         if (textfinished) {
-                        typeText("Click on the button above me to go back to the home page.", "up.webp", 100);}
+                        typeText("Click on the button above me to go back to the home page.", "up.webp", 100, "talk.wav");}
+                        break;
+                    case 8:
+                        if (textfinished) {
+                        textbox.style.fontSize = `7vw`;
+                        await typeText("LEAVE!!!", "angy.webp", 100, "angy-talk.wav")}
+                        window.location.href = '/404';
                         break;
                     default:
                         typeText("Error!", "", "100")
@@ -76,7 +98,7 @@
                 
             }
 
-            function typeText(text, expression, delay) {
+            async function typeText(text, expression, delay, talksound) {
                 textbox.innerText = "";
                 var supposedtext = "";
                 textfinished = false;
@@ -89,13 +111,13 @@
                     textbox.innerText = supposedtext;
                     if (['.', ',', '?', '!', ';', ':', '"', '\''].includes(Array.from(textRemaining)[0]))
                     {
-                        var fintalk = new Audio('/assets/audio/james-talk.wav');
+                        var fintalk = new Audio('/assets/audio/james-' + talksound);
                         fintalk.playbackRate = 0.9;
                         fintalk.preservesPitch = false;
                         fintalk.play();
                     }
                     else {
-                        new Audio('/assets/audio/james-talk.wav').play();
+                        new Audio('/assets/audio/james-' + talksound).play();
                     }
                     
                     textRemaining = textRemaining.substring(1);
@@ -105,6 +127,13 @@
                     }
                     
                 }, delay)
+            }
+
+            function loadConsole() {
+                document.getElementById('console').style.display = 'block';
+                textbox.style.fontSize = `3vw`;
+                typeText("WHAT ARE YOU DOING??", "angy.webp", 100, "angy-talk.wav")
+                progress = 8;
             }
         </script>
     </body>
