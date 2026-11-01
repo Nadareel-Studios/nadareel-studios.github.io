@@ -9,13 +9,103 @@
         <meta property="og:url" content="http://nadareel.richarddorman.com/james">
         <meta property="og:description" content="The offical website for Nadareel Studios">
     </head>
-    <body style="margin:0px; background-color: black; overflow-x: hidden; overflow-y: hidden; animation-name: allow-scrolling; animation-duration: 1ms; animation-delay: 4s; animation-fill-mode: forwards;">
+    <body style="margin:0px; background-color: white; overflow-x: hidden; overflow-y: hidden; animation-name: fade-in; animation-duration: 1ms; animation-delay: 4s; animation-fill-mode: forwards;">
         <noscript>
             <div class="no-script fixed fixedcenter-x fixedcenter-y">
                 The browser has reported that JavaScript is unavalible. Please enable JavaScript for the best experience.<br>(Click to dismiss)
             </div>
             <meta http-equiv="refresh" content="0; url=http://nadareel.richarddorman.com/404" />
         </noscript>
-        <img src="/assets/img/james.png" alt="james" class="fixed fixedcenter-x fixedcenter-y" onclick="alert('I\'m james.');">
+        <button onclick="window.location.href = '/'" style="display: none; margin-top: 20vh; width:5vw; height: 3vw;" id="home-button" class="fixedcenter-x fixed">Home</button>
+        <div style="background-image: url('/assets/img/james-wave.webp'); background-size:cover; background-repeat: no-repeat; width:40vmin; height: 40vmin;" class="fixed fixedcenter-x fixedcenter-y" onclick="ontap()" id="james"></div>
+        <div style="background-image: url('/assets/img/james-textbox.gif'); background-size:cover; background-repeat: no-repeat; width: 33vw; height: 11vw; display:flex; align-items: center; justify-items: center; margin-top: 70vh;" class="fixed fixedcenter-x">
+            <p style="color:black; text-align: center; width: inherit; font-size: larger;" id="jamesbox"></p>
+        </div>
+        <script>
+            const textbox = document.getElementById('jamesbox');
+            const jamesaction = document.getElementById('james');
+            let progress = 0;
+            let textfinished = true;
+            function ontap() {
+                switch (progress)
+                {
+                    case 0:
+                        if (textfinished) {
+                        typeText("Heya!", "wave.webp", 100);
+                        progress++;
+                        }
+                        break;
+                    case 1:
+                        if (textfinished) {
+                        typeText("I'm James, and I'm the antivirus for this here website!", "idle.webp", 100);
+                        progress++;}
+                        break;
+                    case 2:
+                        if (textfinished) {
+                        typeText("Now, you must be wondering why I'm bringing this up.", "watch.webp", 100);
+                        progress++;}
+                        break;
+                    case 3:
+                        if (textfinished) {
+                        typeText("Well... I'm bringing this up because you're trying to access\nmy part of the website.", "watch.webp", 100);
+                        progress++;}
+                        break;
+                    case 4:
+                        if (textfinished) {
+                        typeText("Letting you access this page would... well...\nallow you to take total control over the website...", "call.webp", 100);
+                        progress++;}
+                        break;
+                    case 5:
+                        if (textfinished) {
+                        typeText("Now, now. I know that you probably didn't mean\nto visit this page.", "idle.webp", 100);
+                        progress++;}
+                        break;
+                    case 6:
+                        if (textfinished) {
+                        typeText("So how about I just send you back to the home page,\nand we don't talk about this again?", "up.webp", 100);
+                        document.getElementById('home-button').style.display = 'block';
+                        progress++;}
+                        break;
+                    case 7:
+                        if (textfinished) {
+                        typeText("Click on the button above me to go back to the home page.", "up.webp", 100);}
+                        break;
+                    default:
+                        typeText("Error!", "", "100")
+                }
+                
+            }
+
+            function typeText(text, expression, delay) {
+                textbox.innerText = "";
+                var supposedtext = "";
+                textfinished = false;
+                if (expression !== undefined && expression !== "") {
+                    jamesaction.style.backgroundImage = `url('/assets/img/james-${expression}')`;
+                }
+                let textRemaining = text;
+                let typing = setInterval(() => {
+                    supposedtext += Array.from(textRemaining)[0];
+                    textbox.innerText = supposedtext;
+                    if (['.', ',', '?', '!', ';', ':', '"', '\''].includes(Array.from(textRemaining)[0]))
+                    {
+                        var fintalk = new Audio('/assets/audio/james-talk.wav');
+                        fintalk.playbackRate = 0.9;
+                        fintalk.preservesPitch = false;
+                        fintalk.play();
+                    }
+                    else {
+                        new Audio('/assets/audio/james-talk.wav').play();
+                    }
+                    
+                    textRemaining = textRemaining.substring(1);
+                    if (textRemaining.length === 0) {
+                        textfinished = true;
+                        clearInterval(typing);
+                    }
+                    
+                }, delay)
+            }
+        </script>
     </body>
 </html>
