@@ -94,6 +94,7 @@
     animation-fill-mode: forwards;
     animation-duration: 1ms;
     animation-play-state: paused;
+    z-index: 999;
 }
 
 .no-script:active {
@@ -139,4 +140,60 @@ nav > button {
     border-width: 0.1vw;
     background-color: #ffffff77;
     height: 5vh;
+}
+
+nav > div {
+    border-radius: 0px;
+    border-left-color: white;
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-width: 0.1vw;
+    background-color: #ffffff77;
+    height: 5vh;
+}
+
+.dropdown > button {
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff00;
+    height: 5vh;
+}
+
+
+
+
+
+/* w3schools */
+
+/* Dropdown content */
+
+.dropbtn {
+    width: 3vw;
+}
+
+.dropdown:hover {
+    background-color: #ffffffbb;
+    cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 10vw;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown .dropdown-content {
+  opacity: 0;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  display: block;
 }
