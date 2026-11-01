@@ -101,6 +101,20 @@
     animation-play-state: running;
 }
 
+.call2action {
+    background-color: #f00e8e;
+    border-radius: 0px;
+    border-color: white;
+    border-style: solid;
+    border-width: 0.1vw;
+    height: 5vh;
+
+}
+
+button.call2action:hover {
+    background-color: hsl(326, 60%, 65%);
+}
+
 body {
     color: white;
 }
