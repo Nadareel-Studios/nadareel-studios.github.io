@@ -4,8 +4,39 @@
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="style.css">
         <title>404 | Nadareel Studios</title>
+        <meta property="og:title" content="404!? | Nadareel Page">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="http://nadareel.richarddorman.com/assets/img/logo.png">
+        <meta property="og:url" content="http://nadareel.richarddorman.com/404">
+        <meta property="og:description" content="The page requested was not found. Check the url and try again.">
     </head>
-    <body>
-        
+    <body style="margin:0px; background-color: black; overflow-x: hidden; overflow-y: hidden; animation-name: allow-scrolling; animation-duration: 1ms; animation-delay: 4s; animation-fill-mode: forwards;">
+        <noscript>
+            <div class="no-script fixed fixedcenter-x fixedcenter-y">
+                The browser has reported that JavaScript is unavalible. Please enable JavaScript for the best experience.<br>(Click to dismiss)
+            </div>
+        </noscript>
+        <img src="assets/img/logo-transparent.gif" alt="logo" class="fixed fixedcenter-x fixedcenter-y" style="z-index: -99;">
+        <div>
+            <nav class="absolute">
+                <button onclick="window.location.href = '/'">Home</button>
+                <div class="dropdown">
+                  <button class="dropbtn center-x" onclick="window.location.href = './games'" style="width:inherit;">Games</button>
+                  <div class="dropdown-content" style="width:inherit;">
+                    <button onclick="window.location.href = './games/game1'" style="width:inherit;">Example</button>
+                    <button onclick="window.location.href = './games/game2'" style="width:inherit;">Example</button>
+                    <button onclick="window.location.href = './games/game3'" style="width:inherit; border-bottom-color: #ffffff;">Example</button>
+                  </div>
+                </div>
+                <button>test</button>
+                <button>test</button>
+                <button style="border-right-color: white;">test</button>
+            </nav>
+            <h1>Nadareel Page!?</h1>
+            <p>The page requested was not found on the server. Please double check the url and ensure it is correct.</p>
+            <a href="/">Back home</a>
+            <a href="/james">James</a>
+        </div>
+        <footer>© 2026 • Nadareel Studios</footer>
     </body>
 </html>

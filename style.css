@@ -108,7 +108,7 @@ body {
 nav {
     width: 100vw;
     height: 5vh;
-    background-color: purple;
+    background-color: #f00e8e;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: auto;
@@ -126,7 +126,7 @@ footer {
 }
 
 button:hover {
-    background-color: #ffffffbb;
+    background-color: #ffffff77;
     cursor: pointer;
 }
 
@@ -138,7 +138,7 @@ nav > button {
     border-bottom: none;
     border-right: none;
     border-width: 0.1vw;
-    background-color: #ffffff77;
+    background-color: #ffffff00;
     height: 5vh;
 }
 
@@ -150,7 +150,7 @@ nav > div {
     border-bottom: none;
     border-right: none;
     border-width: 0.1vw;
-    background-color: #ffffff77;
+    background-color: #ffffff00;
     height: 5vh;
 }
 
@@ -174,16 +174,32 @@ nav > div {
 }
 
 .dropdown:hover {
-    background-color: #ffffffbb;
+    background-color: #ffffff77;
     cursor: pointer;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 10vw;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 3vw;
+  background-color: purple;
+  grid-template-columns: auto;
+}
+
+.dropdown-content > button {
+  width: 3vw;
+  height: 2vw;
+  background-color: #ffffff77;
+  grid-template-columns: auto;
+  border: none;
+  border-top-color: #ffffff;
+  border-style: solid;
+  border-radius: 0px;
+  border-width: 0.1vw;
+}
+
+.dropdown-content > button:hover {
+    background-color: #ffffffbb;
+    cursor: pointer;
 }
 
 .dropdown .dropdown-content {
@@ -195,5 +211,5 @@ nav > div {
   animation-name: fade-in;
   animation-duration: 0.5s;
   animation-fill-mode: both;
-  display: block;
+  display: grid;
 }
