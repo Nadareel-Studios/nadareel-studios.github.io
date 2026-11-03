@@ -46,13 +46,13 @@
                 {
                     case 0:
                         if (textfinished) {
-                        typeText("Heya!", "wave.webp", 50, "talk.wav");
+                        typeText("Heya!", "wave.webp", 25, "talk.wav");
                         progress++;
                         }
                         break;
                     case 1:
                         if (textfinished) {
-                        typeText("I'm James, and I'm the antivirus for this here website!", "idle.webp", 50, "talk.wav");
+                        typeText("I'm James, and I'm the antivirus for this here website!", "idle.webp", 25, "talk.wav");
                         progress++;}
                         break;
                     case 2:
@@ -62,38 +62,38 @@
                         break;
                     case 3:
                         if (textfinished) {
-                        typeText("Well... I'm bringing this up because you're trying to access\nmy part of the website.", "watch.webp", 50, "talk.wav");
+                        typeText("Well... I'm bringing this up because you're trying to access\nmy part of the website.", "watch.webp", 25, "talk.wav");
                         progress++;}
                         break;
                     case 4:
                         if (textfinished) {
-                        typeText("Letting you access this page would... well...\nallow you to take total control over the website...", "call.webp", 50, "talk.wav");
+                        typeText("Letting you access this page would... well...\nallow you to take total control over the website...", "call.webp", 25, "talk.wav");
                         progress++;}
                         break;
                     case 5:
                         if (textfinished) {
-                        typeText("Now, now. I know that you probably didn't mean\nto visit this page.", "idle.webp", 50, "talk.wav");
+                        typeText("Now, now. I know that you probably didn't mean\nto visit this page.", "idle.webp", 25, "talk.wav");
                         progress++;}
                         break;
                     case 6:
                         if (textfinished) {
-                        typeText("So how about I just send you back to the home page,\nand we don't talk about this again?", "up.webp", 50, "talk.wav");
+                        typeText("So how about I just send you back to the home page,\nand we don't talk about this again?", "up.webp", 25, "talk.wav");
                         document.getElementById('home-button').style.display = 'block';
                         document.getElementById('console-button').style.display = 'block';
                         progress++;}
                         break;
                     case 7:
                         if (textfinished) {
-                        typeText("Click on the button above me to go back to the home page.", "up.webp", 50, "talk.wav");}
+                        typeText("Click on the button above me to go back to the home page.", "up.webp", 25, "talk.wav");}
                         break;
                     case 8:
                         if (textfinished) {
                         textbox.style.fontSize = `7vw`;
-                        await typeText("LEAVE!!!", "angy.webp", 50, "angy-talk.wav")}
+                        await typeText("LEAVE!!!", "angy.webp", 25, "angy-talk.wav")}
                         window.location.href = '/404';
                         break;
                     default:
-                        typeText("Error!", "", "50")
+                        typeText("Error!", "", "25")
                 }
                 
             }
